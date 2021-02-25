@@ -27,10 +27,10 @@ const empty = {
 
 export const initialState = {
     posts: [],
-    edited: empty,
+    edited: empty
 };
 
-export const reducer = (state = initialState, action) => {
+export const reducer = (state, action) => {
     switch (action.type) {
         case POST_EDIT_SUBMIT:
             return reduceSubmit(state, action);
@@ -52,7 +52,6 @@ export const reducer = (state = initialState, action) => {
             return state;
     }
 };
-
 
 const reduceEdit = (state, action) => {
     const {posts} = state;

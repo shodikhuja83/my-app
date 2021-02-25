@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Post.css';
 import Tags from '../Tags/Tags';
+import PostsContext from '../../contexts/PostsContext';
 import { edit, hide, like, remove, show } from '../../store/actions';
-import { useDispatch } from 'react-redux';
 
 function Post({post}) {
 	const {author} = post;
 	const {photo} = post;
 	const likeIcon = post.likedByMe ? "https://lms.openjs.io/liked.svg" : "https://lms.openjs.io/unliked.svg";
 
-	const dispatch = useDispatch();
+	const {dispatch} = useContext(PostsContext);
 
 	const handleLike = () => dispatch(like(post.id));
 	const handleRemove = () => dispatch(remove(post.id));

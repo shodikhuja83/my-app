@@ -1,10 +1,9 @@
-import React, {useRef} from 'react';
-import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+import React, {useRef, useContext} from 'react';
+import PostsContext from '../../contexts/PostsContext';
 import { editCancel, editChange, editSubmit } from '../../store/actions';
 
 export default function PostForm() {
-    const dispatch = useDispatch();
-    const edited = useSelector(state => state.edited, shallowEqual);
+    const {state: {edited}, dispatch} = useContext(PostsContext);
     const firstFocusEl = useRef(null);
     
     const handleSubmit = ev => {

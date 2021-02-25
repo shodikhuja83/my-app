@@ -14,7 +14,7 @@ export const editSubmit = () => {
     };
 };
 
-export const editCancel = () => {
+export const editCancel = () => { // wasn't tested
     return {
         type: POST_EDIT_CANCEL,
         payload: {}
